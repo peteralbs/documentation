@@ -1,6 +1,7 @@
-=============================
-Configure your Paypal account
-=============================
+
+======
+Paypal
+======
 
 Paypal is available and popular worldwide. It doesn’t charge any
 subscription fee and creating an account is very easy. That’s why we
@@ -111,7 +112,7 @@ Your Paypal account is ready!
 .. tip::
    If you want your customers to pay without creating a Paypal account,
    *Paypal Account Optional* needs to be turned on.
-    
+
    .. image:: media/paypal_account_optional.png
 
 .. tip::
@@ -168,7 +169,7 @@ Your configuration is ready to roll. Make sure *Production* mode is
 on. Then publish the payment method by clicking the *Published* button right next to it.
 
 .. image:: media/paypal11.png
-    :align: center 
+    :align: center
 
 .. image:: media/paypal12.png
     :align: Center

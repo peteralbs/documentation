@@ -9,8 +9,15 @@ Payment Acquirers (Credit Cards, Online Payment)
 
    payment_acquirers/wire_transfer
    payment_acquirers/adyen
+   payment_acquirers/alipay
    payment_acquirers/authorize
+   payment_acquirers/buckaroo
+   payment_acquirers/mollie
+   payment_acquirers/ogone
    payment_acquirers/paypal
+   payment_acquirers/payulatam
+   payment_acquirers/payumoney
+   payment_acquirers/sips
    payment_acquirers/stripe
 
 Odoo embeds several **payment acquirers** that allow your customers to pay on their *Customer
@@ -67,25 +74,35 @@ Online Payment Providers
 | :doc:`Adyen                         | ✔                    | ✔         | ✔          |                 | ✔         |
 | <payment_acquirers/adyen>`          |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| Alipay                              | ✔                    |           |            |                 |           |
+| :doc:`Alipay                        | ✔                    |           |            |                 |           |
+| <payment_acquirers/alipay>`         |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
 | :doc:`Authorize.Net                 | ✔                    | ✔         | ✔          | ✔               |           |
 | <payment_acquirers/authorize>`      |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| Buckaroo                            | ✔                    |           |            |                 |           |
+| :doc:`Buckaroo                      | ✔                    |           |            |                 |           |
+| <payment_acquirers/buckaroo>`       |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| Ingenico                            | ✔                    | ✔         | ✔          |                 |           |
+| :doc:`Mollie                        | ✔                    |           |            |                 |           |
+| <payment_acquirers/mollie>`         |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| Mollie                              | ✔                    |           |            |                 |           |
+| :doc:`Ogone                         | ✔                    |           |            |                 |           |
+| <payment_acquirers/ogone>`          |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
 | :doc:`PayPal                        | ✔                    |           |            |                 |           |
 | <payment_acquirers/paypal>`         |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| PayUMoney                           | ✔                    |           |            |                 |           |
+| :doc:`PayU Latam                    | ✔                    |           |            |                 |           |
+| <payment_acquirers/payulatam>`      |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| SIPS                                | ✔                    |           |            |                 |           |
+| :doc:`PayUMoney                     | ✔                    |           |            |                 |           |
+| <payment_acquirers/payumoney>`      |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| Stripe                              | ✔                    | ✔         | ✔          |                 |           |
+| :doc:`SIPS                          | ✔                    |           |            |                 |           |
+| <payment_acquirers/sips>`           |                      |           |            |                 |           |
++-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
+| :doc:`Stripe                        | ✔                    | ✔         | ✔          |                 |           |
+| <payment_acquirers/stripe>`         |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
 
 .. note::
@@ -161,32 +178,23 @@ If you wish to manually capture an amount instead of having an immediate capture
 acquirer allows it, you can enable the manual capture.
 
 The **Capture Amount Manually** field is under the **Configuration** tab. If enabled, the funds are
-reserved for a few days on the customer's card, but not charged yet. You must then go to the related
-Sales Order and manually *capture* the funds before its automatic cancellation, or *void the
-transaction* to unlock the funds from the customer's card.
+reserved for a few days on the customer's card, but not charged yet.
 
 .. image:: payment_acquirers/media/capture_manually.png
    :align: center
    :alt: Adyen Configuration tab on Odoo
 
-To capture the payment, go to the related Sales Order or Invoice and click on *Capture Transaction*.
-If the order is canceled, you can click on *Void Transaction* to unlock the funds from the
-customer's card.
+To capture the payment, you must then go to the related
+Sales Order and manually *capture* the funds before its automatic cancellation, or *void the
+transaction* to unlock the funds from the customer's card.
 
 .. image:: payment_acquirers/media/capture.png
    :align: center
    :alt: Hold the credit card payment until you capture or revoke it on Odoo
 
-.. _payment_acquirers/payment_flow:
-
-Payment Flow
-************
-
-Choose in the **Payment Flow** field if to redirect the user to the payment acquirer's portal to
-authenticate the payment, or if to stay on the current page and authenticate the payment from Odoo.
-
 .. note::
-   Some features are available only if you select *Redirection to the acquirer website*.
+   Odoo may not yet support the manual capture for all acquirers, but you can manage the capture in
+   your chosen acquirers interfaces.
 
 .. _payment_acquirers/countries:
 
@@ -253,8 +261,16 @@ Here are the requirements for this to work:
 .. seealso::
 
    - :doc:`../finance/accounting/receivables/customer_payments/recording`
+   - :doc:`../websites/ecommerce/shopper_experience/payment_acquirer`
    - :doc:`payment_acquirers/wire_transfer`
    - :doc:`payment_acquirers/adyen`
+   - :doc:`payment_acquirers/alipay`
    - :doc:`payment_acquirers/authorize`
+   - :doc:`payment_acquirers/buckaroo`
+   - :doc:`payment_acquirers/mollie`
+   - :doc:`payment_acquirers/ogone`
    - :doc:`payment_acquirers/paypal`
-   - :doc:`../websites/ecommerce/shopper_experience/payment_acquirer`
+   - :doc:`payment_acquirers/payulatam`
+   - :doc:`payment_acquirers/payumoney`
+   - :doc:`payment_acquirers/sips`
+   - :doc:`payment_acquirers/stripe`
