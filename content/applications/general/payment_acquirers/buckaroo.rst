@@ -28,23 +28,13 @@ Odoo needs your **API Credentials** to connect with your Buckaroo account, which
 You can copy your credentials from your Buckaroo account, and paste them in the related fields under
 the **Credentials** tab.
 
-.. image:: media/buckaroo_credentials.png
-   :align: center
-   :alt: Buckaroo required credentials.
-   :width: 500
-
 .. _buckaroo/website_key:
 
 Website Key
 ~~~~~~~~~~~
 
 In order to retrieve the Website Key, log into your Buckaroo account, go to
-:menuselection:`Configuration --> Templates --> Your Website`
-
-.. image:: media/buckaroo_website_key.png
-   :align: center
-   :alt: Buckaroo required credentials.
-   :width: 500
+:menuselection:`Configuration --> Templates --> Your Website`.
 
 .. _buckaroo/secret_key:
 
@@ -52,17 +42,11 @@ Secret Key
 ~~~~~~~~~~
 
 In order to retrieve the Website Key, log into your Buckaroo account, go to
-:menuselection:`Configuration --> Security --> Secret Key`
-
-.. image:: media/buckaroo_secret_key.png
-   :align: center
-   :alt: Buckaroo required credentials.
-   :width: 500
+:menuselection:`Configuration --> Security --> Secret Key`.
 
 .. important::
    If you are trying Buckaroo in a test account, change the **State** to *Test Mode*. We
    recommend doing this on a test Odoo database, rather than on your main database.
 
 .. seealso::
-   - `About Buckaroo <https://www.buckaroo.eu/about-us/about-buckaroo>`_
    - :doc:`../payment_acquirers`

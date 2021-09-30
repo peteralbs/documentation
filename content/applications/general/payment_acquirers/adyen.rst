@@ -21,7 +21,7 @@ Credentials tab
 
 Odoo needs your **API Credentials** to connect with your Adyen account, which comprise:
 
-- **Merchant Account**: The code of the merchant account to use with this acquirer.
+- **Merchant Account**: The code of the merchant account to use with Adyen.
 - :ref:`API Key <adyen/api_and_client_keys>`: The API key of the webservice user.
 - :ref:`Client Key <adyen/api_and_client_keys>`: The client key of the webservice user.
 - :ref:`HMAC Key <adyen/hmac_key>`: The HMAC key of the webhook.
@@ -30,11 +30,6 @@ Odoo needs your **API Credentials** to connect with your Adyen account, which co
 
 You can copy your credentials from your Adyen account, and paste them in the related fields under
 the **Credentials** tab.
-
-.. image:: media/adyen_credentials.png
-   :align: center
-   :alt: Adyen required credentials.
-   :width: 500
 
 .. important::
    If you are trying Adyen as a test, with a *test account*, change the **State** to *Test Mode*. We
@@ -49,11 +44,6 @@ In order to retrieve the API Key and the Client Key, log into your Adyen account
 :menuselection:`Developers --> API Credentials --> Username if one, else Create new credential -->
 Authentication`, and get or generate your **API Key** and **Client Key**. Be carefull to copy your
 API key as you'll not be allowed to get it later without generating a new one.
-
-.. image:: media/adyen_api_and_client_keys.png
-   :align: center
-   :alt: Generate new API Key and Client Key.
-   :width: 500
 
 This is also the place where you'll :ref:`allow payments to be made from your website
 <adyen/allowed_origins>`.
@@ -70,7 +60,6 @@ webhook --> Add Standard notification`.
 .. image:: media/adyen_add_webhook.png
    :align: center
    :alt: Generate new API Key and Client Key.
-   :width: 500
 
 There, in :menuselection:`Transport --> URL`, enter your server address followed by
 `/payment/adyen/notification`.
@@ -78,15 +67,11 @@ There, in :menuselection:`Transport --> URL`, enter your server address followed
 .. image:: media/adyen_webhook_url.png
    :align: center
    :alt: Generate new API Key and Client Key.
-   :width: 500
 
 Then continue in :menuselection:`Additional Settings --> HMAC Key --> Generate new HMAC key`. Be
 carefull to copy it as you'll not be allowed to get it later without generating a new one.
 
-.. image:: media/adyen_webhook_hmac_key.png
-   :align: center
-   :alt: Generate new API Key and Client Key.
-   :width: 500
+You have to save the webhook to finalize its creation.
 
 .. _adyen/urls:
 
@@ -102,7 +87,6 @@ and get your:
 .. image:: media/adyen_api_urls.png
    :align: center
    :alt: Get the links for the different API.
-   :width: 500
 
 Adyen Account
 -------------
@@ -119,10 +103,8 @@ payments will be made.
 .. image:: media/adyen_allowed_origins.png
    :align: center
    :alt: Allows payments originated from a specific domain.
-   :width: 500
 
 This is also the place where you got your :ref:`API key and Client key <adyen/api_and_client_keys>`.
 
 .. seealso::
-   - `Get started with Adyen <https://docs.adyen.com/get-started-with-adyen>`_
    - :doc:`../payment_acquirers`

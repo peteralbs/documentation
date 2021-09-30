@@ -3,12 +3,13 @@
 SIPS
 ====
 
-`SIPS <COINCOIN>`_ is an online payments platform COINCOIN.
+`SIPS <https://sips.worldline.com/>`_ is an online payments solution from the
+multinational Worldline.
 
 Configuration
 =============
 
-To proceed your payments with COINCOIN
+To proceed your payments with SIPS, you need to use your prod credentials.
 
 .. note::
    Please refer to :ref:`Add a new Payment Acquirer <payment_acquirers/add_new>` to read how to
@@ -20,24 +21,16 @@ Credentials tab
 Odoo needs your **API Credentials** to connect with your SIPS account, which comprise:
 
 - Merchant ID: The ID solely used to identify the merchant account with SIPS.
-- Secret Key: COINCOIN ?
-- Secret Key Version: COINCOIN prérempli
-- Interface Version: COINCOIN prérempli
+- Secret Key: The key to sign the merchant account with SIPS.
+- Secret Key Version: The version of the key, pre-filled.
+- Interface Version: Pre-filled, don't change it.
 
-You can copy your credentials from your SIPS account, and paste them in the related fields under
-the **Credentials** tab.
-
-.. image:: media/sips_credentials.png
-   :align: center
-   :alt: SIPS required credentials.
-   :width: 500
-
-To retrieve them, COINCOIN
+You can copy your credentials from your SIPS environment info documentation, in the section
+**PROD**, and paste them in the related fields under the **Credentials** tab.
 
 .. important::
-   If you are trying SIPS as a test, in the *sandbox*, change the **State** to *Test Mode*. We
-   recommend doing this on a test Odoo database, rather than on your main database. COINCOIN?
+   If you are trying SIPS as a test, with the *TEST* credentials, change the **State** to *Test
+   Mode*. We recommend doing this on a test Odoo database, rather than on your main database.
 
 .. seealso::
-   - `SIPS: COINCOIN <COINCOIN>`_
    - :doc:`../payment_acquirers`

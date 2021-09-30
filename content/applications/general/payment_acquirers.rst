@@ -15,8 +15,6 @@ Payment Acquirers (Credit Cards, Online Payment)
    payment_acquirers/mollie
    payment_acquirers/ogone
    payment_acquirers/paypal
-   payment_acquirers/payulatam
-   payment_acquirers/payumoney
    payment_acquirers/sips
    payment_acquirers/stripe
 
@@ -92,11 +90,9 @@ Online Payment Providers
 | :doc:`PayPal                        | ✔                    |           |            |                 |           |
 | <payment_acquirers/paypal>`         |                      |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| :doc:`PayU Latam                    | ✔                    |           |            |                 |           |
-| <payment_acquirers/payulatam>`      |                      |           |            |                 |           |
+| PayU Latam                          | ✔                    |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
-| :doc:`PayUMoney                     | ✔                    |           |            |                 |           |
-| <payment_acquirers/payumoney>`      |                      |           |            |                 |           |
+| PayUMoney                           | ✔                    |           |            |                 |           |
 +-------------------------------------+----------------------+-----------+------------+-----------------+-----------+
 | :doc:`SIPS                          | ✔                    |           |            |                 |           |
 | <payment_acquirers/sips>`           |                      |           |            |                 |           |
@@ -160,6 +156,27 @@ Configuration tab
 You can change the Payment Acquirer front-end appearance by modifying its name under the **Displayed
 as** field and which credit card icons to display under the **Supported Payment Icons** field.
 
+.. _payment_acquirers/payment_methods:
+
+Enable Local Payment Methods
+****************************
+
+Local payment methods are payment methods that are only available for certain merchants and
+customers countries and currencies. They also depend on your acquirer.
+
+To enable specific Local Payment Methods with your acquirer, list them as supported payment icons.
+To do so, go to :menuselection:`Payment Acquirers --> Stripe --> Configuration` and add the desired
+payment methods in the **Supported Payment Icons** field. If the desired payment method is already
+listed, you don't have anything to do.
+
+.. image:: payment_acquirers/media/stripe_enable_local_payment_method.png
+   :align: center
+   :alt: Select and add icons of payment methods you want to enable
+
+.. note::
+    If a payment method icon doesn't exist at all in the database, the corresponding local payment method is always offered
+    to customers.
+
 .. _payment_acquirers/save_cards:
 
 Save and reuse Credit Cards
@@ -174,8 +191,13 @@ useful for subscriptions' recurring payments.
 Place a hold on a card
 **********************
 
-If you wish to manually capture an amount instead of having an immediate capture, and if your chosen
-acquirer allows it, you can enable the manual capture.
+If you wish to manually capture an amount instead of having an immediate capture, you can enable the
+manual capture. Capturing payments manually has many advantages:
+
+  - You can have the payment confirmation before shipping and only make the capture after it's done.
+  - You avoid potentially high credit card fees in the event of overselling or cancelled Orders.
+  - It allows you to review and verify that orders are legitimate before the payment is completed and
+    the fulfillment process starts.
 
 The **Capture Amount Manually** field is under the **Configuration** tab. If enabled, the funds are
 reserved for a few days on the customer's card, but not charged yet.
@@ -210,12 +232,6 @@ Payment Journal
 ***************
 
 The **Payment Journal** selected for your Payment Acquirer must be a *Bank* journal.
-
-.. important::
-   In many cases, Odoo automatically creates a new **Journal** and a new **Account** when you
-   activate a new Payment Acquirer. Both of them are preset to work out-of-the-box, but we strongly
-   recommend you to make sure these fields are correctly set according to your accounting needs, and
-   adapt them if necessary.
 
 .. _payment_acquirers/messages:
 
@@ -255,8 +271,8 @@ Here are the requirements for this to work:
   - The Account must **Allow Reconciliation**
 
 .. note::
-   In many cases, Odoo automatically creates a new **Journal** and a new **Current Asset Account**
-   when you activate a new Payment Acquirer. You can modify them if necessary.
+   Odoo automatically creates a new **payment method** for your new Payment Acquirer when you
+   activate it. You can modify it necessary.
 
 .. seealso::
 
@@ -270,7 +286,5 @@ Here are the requirements for this to work:
    - :doc:`payment_acquirers/mollie`
    - :doc:`payment_acquirers/ogone`
    - :doc:`payment_acquirers/paypal`
-   - :doc:`payment_acquirers/payulatam`
-   - :doc:`payment_acquirers/payumoney`
    - :doc:`payment_acquirers/sips`
    - :doc:`payment_acquirers/stripe`
